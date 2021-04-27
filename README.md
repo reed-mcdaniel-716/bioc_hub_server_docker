@@ -4,10 +4,6 @@ author: "Maya Reed McDaniel"
 date: "4/20/2021"
 output: html_document
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 ***Based on the work of Lori Shepherd and the Bioconductor team***
 
 # Dockerizing the Bioconductor Hub Server
