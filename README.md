@@ -11,7 +11,6 @@ output: html_document
 and ExperimentHub
     - For example, if a research group wanted their own Hub instance
 - The hub is a Ruby application with MySQL and SQLite databases
-    - can either start from a new db or an older one and apply migrations
 - See [GitHub](https://github.com/Bioconductor/BiocHubServer/tree/versioning)
 on the `versioning` branch
 
