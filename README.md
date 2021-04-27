@@ -4,9 +4,9 @@ author: "Maya Reed McDaniel"
 date: "4/20/2021"
 output: html_document
 ---
-***Based on the work of Lori Shepherd and the Bioconductor team***
+##Based on the work of Lori Shepherd and the Bioconductor team
 
-# Dockerizing the Bioconductor Hub Server
+### Dockerizing the Bioconductor Hub Server
 - The Bioconductor Hub Server is like a little local instances of AnnotationHub
 and ExperimentHub
     - For example, if a research group wanted their own Hub instance
@@ -16,7 +16,7 @@ and ExperimentHub
 on the `versioning` branch
 
 ---
-## Approach
+#### Approach
 - Created a `Dockerfile` that starts of with the Ruby image
 (base is **Ubuntu buster**), and installs the following:
     - sqlite
@@ -31,7 +31,7 @@ MySQL database, apply the database migrations, and start the hub server
 application, commands for which are contained in the `app.sh` file
 
 ---
-## Commands
+#### Commands
 - for bringing up the two containers which make up the hub server application;
 if it doesn't already exist, this will also build the Ruby based image
 ```
@@ -59,7 +59,7 @@ mysql --host=bioc-hub-server-db --port=3306 --user=mrmcd --password=secretpw hub
 ```
 
 ---
-## Notes
+#### Notes
 - The core Ruby app must be run with the host option `0.0.0.0` so that the
 container is listening on all interfaces for requests and not just its own
 internal localhost
