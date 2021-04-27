@@ -1,0 +1,36 @@
+# docker-compose file for Bioc Hub Server deployment
+
+version: '3'
+
+services:
+  bioc-hub-server-app:
+    restart: always
+    image: "bioc-hub-server-app:0.0.1"
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args :
+        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        MYSQL_DATABASE: ${MYSQL_DATABASE}
+        MYSQL_USER: ${MYSQL_USER}
+        MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        RUBY_MYSQL_CONNECTION: ${RUBY_MYSQL_CONNECTION}
+    env_file:
+      - .env
+    container_name: bioc-hub-server-app
+    ports :
+      - "9393:9393"
+    depends_on:
+      - bioc-hub-server-db
+
+  bioc-hub-server-db:
+    restart: always
+    image : "mysql:5.7"
+    container_name: bioc-hub-server-db
+    ports :
+      - "3306:3306"
+    env_file:
+      - .env
+    volumes:
+      #- ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./hub-server-mysql:/var/lib/mysql

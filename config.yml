@@ -1,0 +1,3 @@
+dbname: "hubserverdb"
+dbtype: "mysql"
+mysql_url: "mysql2://mrmcd:secretpw@bioc-hub-server-db/hubserverdb"
