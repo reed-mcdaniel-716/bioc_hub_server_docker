@@ -4,7 +4,7 @@ author: "Maya Reed McDaniel"
 date: "4/20/2021"
 output: html_document
 ---
-##Based on the work of Lori Shepherd and the Bioconductor team
+## Based on the work of Lori Shepherd and the Bioconductor team
 
 ### Dockerizing the Bioconductor Hub Server
 - The Bioconductor Hub Server is like a little local instances of AnnotationHub
