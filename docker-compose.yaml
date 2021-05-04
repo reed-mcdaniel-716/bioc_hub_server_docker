@@ -33,4 +33,5 @@ services:
       - .env
     volumes:
       #- ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ./hub-server-mysql:/var/lib/mysql
+      - ./hub-server-mysql-data:/var/lib/mysql
+      #- ./mysql_config:/etc/mysql/conf.d
